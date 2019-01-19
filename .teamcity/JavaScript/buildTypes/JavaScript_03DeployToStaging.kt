@@ -1,6 +1,7 @@
 package JavaScript.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
+import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 
 object JavaScript_03DeployToStaging : BuildType({
     uuid = "2fed58cc-4361-4e23-8e4b-140587c1bead"
@@ -18,6 +19,12 @@ object JavaScript_03DeployToStaging : BuildType({
 			rmdir /S /Q \inetpub\wwwrott
 			xcopy /S /I /Y app \inetpub\wwwroot\
 			"""
+        }
+    }
+
+    triggers {
+        vcs {
+            branchFilter = ""
         }
     }
 
