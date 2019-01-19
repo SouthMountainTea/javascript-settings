@@ -16,4 +16,11 @@ object JavaScript_03DeployToStaging : BuildType({
         snapshot(JavaScript_02Forefox) {
         }
     }
+
+    triggers {
+        vcs {
+            id = "vcsTrigger"
+            branchFilter = ""
+        }
+    }
 })
